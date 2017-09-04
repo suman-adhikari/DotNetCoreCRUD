@@ -1,0 +1,10 @@
+@model CORE2.Models.Student
+
+<h2>Edit</h2>
+
+<form asp-controller="Students" asp-action="Edit" method="post">
+  <input asp-for="FirstMidName" >
+  <input asp-for="LastName" >
+  <input asp-for="EnrollmentDate" >
+  <button type="submit">Save</button>
+</form>

@@ -1,0 +1,84 @@
+@model IEnumerable<CORE2.Models.Student>
+
+<h2>Index</h2>
+
+<p>
+   <h2>Create</h2>
+   
+   <form asp-controller="Students" asp-action="Create" method="post">
+        <input id="FirstMidName" name="FirstMidName" placeholder="FirstMidName" >
+        <input id="LastName" name="LastName" placeholder="LastName" >
+        <input id="EnrollmentDate", name="EnrollmentDate" placeholder="EnrollmentDate" >
+        <button type="button" onclick="SaveData()">Save</button>
+    </form>
+
+<table class="table">
+    <thead>
+        <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.LastName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.FirstMidName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.EnrollmentDate)
+                </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr id="@item.ID">
+            <td>
+                @Html.DisplayFor(modelItem => item.LastName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FirstMidName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EnrollmentDate)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.ID">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.ID">Details</a> |
+                <a onclick="DeleteData(@item.ID)">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+
+<script>
+   function SaveData(){
+          
+       $.post( "/Students/Create", $("form").serializeArray(),  function( data ) {          
+                 debugger;
+
+                 var tr = $('<tr id='+data.id+'>');                
+
+                 var td = "<td>"+data.lastName +"</td>"+
+                          "<td>"+data.firstMidName +"</td>"+
+                          "<td>"+data.enrollmentDate +"</td>"+                                             
+                          "<td>"+
+                             '<a href="/Students/Edit/'+data.id+'">Edit</a> | '+                  
+                             '<a href="/Students/Details/'+data.id+'">Details</a> | '+                  
+                             '<a href="/Students/Delete/'+data.id+'">Delete</a> | '+                  
+                          "</td>";
+
+                 tr.append(td);     
+                 $(".table tbody").append(tr);    
+
+            });
+   }
+
+  function DeleteData(id){
+      debugger;
+      $.post( "/Students/Delete", {'id':id},  function( data ) {    
+                if(data.id==id){      
+                 $("#"+id).remove();      
+                }      
+            });
+  }
+
+</script>    

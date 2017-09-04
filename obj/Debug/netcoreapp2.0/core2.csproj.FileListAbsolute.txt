@@ -1,0 +1,13 @@
+E:\suman\core2\bin\Debug\netcoreapp2.0\x86\e_sqlite3.dll
+E:\suman\core2\bin\Debug\netcoreapp2.0\x64\e_sqlite3.dll
+E:\suman\core2\bin\Debug\netcoreapp2.0\core2.deps.json
+E:\suman\core2\bin\Debug\netcoreapp2.0\core2.runtimeconfig.json
+E:\suman\core2\bin\Debug\netcoreapp2.0\core2.runtimeconfig.dev.json
+E:\suman\core2\bin\Debug\netcoreapp2.0\core2.dll
+E:\suman\core2\bin\Debug\netcoreapp2.0\core2.pdb
+E:\suman\core2\obj\Debug\netcoreapp2.0\core2.csproj.CoreCompileInputs.cache
+E:\suman\core2\obj\Debug\netcoreapp2.0\UserSecretsAssemblyInfo.cs
+E:\suman\core2\obj\Debug\netcoreapp2.0\core2.AssemblyInfoInputs.cache
+E:\suman\core2\obj\Debug\netcoreapp2.0\core2.AssemblyInfo.cs
+E:\suman\core2\obj\Debug\netcoreapp2.0\core2.dll
+E:\suman\core2\obj\Debug\netcoreapp2.0\core2.pdb

@@ -1,0 +1,15 @@
+@model CORE2.Models.Student
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Create</h2>
+
+
+<form asp-controller="Students" asp-action="Create" method="post">
+  <input asp-for="FirstMidName" >
+  <input asp-for="LastName" >
+  <input asp-for="EnrollmentDate" >
+  <button type="submit">Save</button>
+</form>
